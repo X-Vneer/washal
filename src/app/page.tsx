@@ -18,7 +18,7 @@ export default function Home() {
       </main>
       <Features />
       {/* <YourDestination /> */}
-      <Hotels hotels={RoomsTypes} title={"أنواع الغرف"} />
+      <Hotels hotels={RoomsTypes} title={"أنواع الشاليهات"} />
       <Testimonials />
       <ContactUs />
     </>

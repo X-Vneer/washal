@@ -10,6 +10,11 @@ import { HotelType } from "@/types/hotels"
 
 import Card from "../ui/card"
 
+// type Props = {
+//   hotels: HotelType[]
+//   title: string
+// }
+
 type Props = {
   hotels: HotelType[]
   title: string

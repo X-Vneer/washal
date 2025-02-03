@@ -9,26 +9,31 @@ import { Swiper, SwiperSlide } from "swiper/react"
 import { HotelType } from "@/types/hotels"
 
 import Card from "../ui/card"
-
-// type Props = {
-//   hotels: HotelType[]
-//   title: string
-// }
+import { UnitType } from "@/types/unit"
 
 type Props = {
   hotels: HotelType[]
+  units: UnitType[]
   title: string
 }
-const Hotels = ({ hotels, title }: Props) => {
+const Hotels = ({ hotels,units, title }: Props) => {
   const [state, setState] = useState(false)
 
-  const items = hotels.map((hotel) => {
+  const unit_items = units.map((unit) => {
     return (
-      <SwiperSlide key={hotel.id}>
-        <Card {...hotel} />
+      <SwiperSlide key={unit.id}>
+        <Card {...unit} />
       </SwiperSlide>
     )
   })
+
+  // const items = hotels.map((hotel) => {
+  //   return (
+  //     <SwiperSlide key={hotel.id}>
+  //       <Card {...hotel} />
+  //     </SwiperSlide>
+  //   )
+  // })
 
   // slider REf
   const navigationPrevRef = useRef(null)
@@ -85,7 +90,7 @@ const Hotels = ({ hotels, title }: Props) => {
               spaceBetween: 0,
             },
           }}>
-          {items}
+          {unit_items}
         </Swiper>
       </div>
     </section>

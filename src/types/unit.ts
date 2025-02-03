@@ -1,4 +1,4 @@
-export type Unit = {
+export type UnitType = {
     id:            number;
     title:         string;
     description:   string;

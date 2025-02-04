@@ -1,28 +1,28 @@
 // Import Swiper styles
-import { get } from "http"
-import { RoomsTypes } from "@/api/services/get-rooms-data"
 import getUnitsData from "@/api/services/get-units-data"
 
-import { Unit } from "@/types/unit"
+import { UnitType } from "@/types/unit"
 import SearchBar from "@/components/common/search-bar"
 import ContactUs from "@/components/home/contact-us"
-import DynamicHotels from "@/components/home/dynamic-hotels"
+import DynamicHotels from "@/components/home/dynamic-units"
 import Features from "@/components/home/features"
 import HeroSection from "@/components/home/hero-section"
-import Hotels from "@/components/home/hotels"
 import Testimonials from "@/components/home/testimonials"
+import Units from "@/components/home/units"
+import YourDestination from "@/components/home/your-destination"
 
 export default async function Home() {
-  const UnitsData: Unit[] = await getUnitsData()
+  const UnitsData: UnitType[] = await getUnitsData()
   return (
     <>
       <main>
         <HeroSection />
-        <SearchBar />
+        {/* <SearchBar /> */}
       </main>
       <Features />
       {/* <YourDestination /> */}
-      <Hotels hotels={RoomsTypes} units={UnitsData} title={"أنواع الشاليهات"} />
+      <Units units={UnitsData} title={"أنواع الشاليهات"} />
+      {/* <Hotels hotels={RoomsTypes} units={UnitsData} title={"أنواع الشاليهات"} /> */}
       <Testimonials />
       <ContactUs />
     </>

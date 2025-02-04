@@ -10,7 +10,11 @@ import { ChevronLeft, ChevronRight } from "lucide-react"
 import { Autoplay, Navigation, Pagination } from "swiper/modules"
 import { Swiper, SwiperSlide } from "swiper/react"
 
-type Props = {}
+import { UnitType } from "@/types/unit"
+
+type Props = {
+  unit: UnitType
+}
 
 const ImageSlider = (props: Props) => {
   const { showImageSlider, close } = useUnitStore((state) => ({
@@ -34,7 +38,7 @@ const ImageSlider = (props: Props) => {
         {(onClose) => {
           return (
             <>
-              <ModalBody dir="ltr" className="relative py-4 ">
+              <ModalBody dir="ltr" className="relative py-4">
                 <Swiper
                   dir="ltr"
                   className="w-full"
@@ -54,15 +58,15 @@ const ImageSlider = (props: Props) => {
                     delay: 7500,
                     disableOnInteraction: true,
                   }}>
-                  {new Array(10).fill("").map((image, index) => {
+                  {props.unit.images.map((image, index) => {
                     return (
                       <SwiperSlide key={`slider_image_${index}`}>
-                        <div className=" relative flex h-[calc(100vh-50px)] items-center justify-center p-10 lg:p-20   ">
+                        <div className="relative flex h-[calc(100vh-50px)] items-center justify-center p-10 lg:p-20">
                           <img
-                            src={image2.src}
+                            src={image}
                             alt={""}
                             loading="lazy"
-                            className=" h-full w-full max-w-[70vw] object-contain"
+                            className="h-full w-full max-w-[70vw] object-contain"
                           />
                         </div>
                       </SwiperSlide>
@@ -76,7 +80,7 @@ const ImageSlider = (props: Props) => {
                   isIconOnly
                   variant="light"
                   radius="full"
-                  className=" absolute left-2 top-1/2 z-[1] -translate-y-1/2 lg:left-5  ">
+                  className="absolute left-2 top-1/2 z-[1] -translate-y-1/2 lg:left-5">
                   <ChevronLeft size={30} className="text-primaryColor" />
                 </Button>
                 <Button

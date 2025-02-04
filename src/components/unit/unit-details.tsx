@@ -1,6 +1,10 @@
 import React from "react"
+import getUnitData from "@/api/services/get-unit-data"
+import getUnitsData from "@/api/services/get-units-data"
 import { cn } from "@/utils/cn"
 import { Bath, BedDouble, BedSingle, Star, Trees } from "lucide-react"
+
+import { Rating, UnitType } from "@/types/unit"
 
 import PeopleRate from "./people-rate"
 
@@ -74,63 +78,75 @@ const specialDetails = [
   },
 ]
 
-const usersRates = [
-  {
-    id: "1",
-    date: new Date("4/29/2024"),
-    username: "Alasmar",
-    rate: 5,
-    comment:
-      "Lorem, ipsum dolor edita, itaqi emos qui. Voluptatem veniam perspiciatis qui perferendis!",
-    img: "",
-  },
-  {
-    id: "2",
-    date: new Date("4/30/2024"),
-    username: "fisal",
-    rate: 4.5,
-    comment:
-      "Lorem, ipsum dolor edita, itaqi emos qui. Voluptatem veniam perspiciatis qui perferendis!",
-    img: "",
-  },
-  {
-    id: "3",
-    date: new Date("4/29/2024"),
-    username: "Ahmed",
-    rate: 5,
-    comment:
-      "Lorem, ipsum dolor edita, itaqi emos qui. Voluptatem veniam perspiciatis qui perferendis!",
-    img: "",
-  },
-  {
-    id: "4",
-    date: new Date("4/29/2024"),
-    username: "Ibrahim",
-    rate: 3,
-    comment:
-      "Lorem, ipsum dolor edita, itaqi emos qui. Voluptatem veniam perspiciatis qui perferendis!",
-    img: "",
-  },
-  {
-    id: "5",
-    date: new Date("4/29/2024"),
-    username: "Fatima",
-    rate: 4,
-    comment:
-      "Lorem, ipsum dolor edita, itaqi emos qui. Voluptatem veniam perspiciatis qui perferendis!",
-    img: "",
-  },
-  {
-    id: "6",
-    date: new Date("4/29/2024"),
-    username: "Marwa",
-    rate: 5,
-    comment:
-      "Lorem, ipsum dolor edita, itaqi emos qui. Voluptatem veniam perspiciatis qui perferendis!",
-    img: "",
-  },
-]
-const UnitDetails = () => {
+// const usersRates = [
+//   {
+//     id: "1",
+//     date: new Date("4/29/2024"),
+//     username: "Alasmar",
+//     rate: 5,
+//     comment:
+//       "Lorem, ipsum dolor edita, itaqi emos qui. Voluptatem veniam perspiciatis qui perferendis!",
+//     img: "",
+//   },
+//   {
+//     id: "2",
+//     date: new Date("4/30/2024"),
+//     username: "fisal",
+//     rate: 4.5,
+//     comment:
+//       "Lorem, ipsum dolor edita, itaqi emos qui. Voluptatem veniam perspiciatis qui perferendis!",
+//     img: "",
+//   },
+//   {
+//     id: "3",
+//     date: new Date("4/29/2024"),
+//     username: "Ahmed",
+//     rate: 5,
+//     comment:
+//       "Lorem, ipsum dolor edita, itaqi emos qui. Voluptatem veniam perspiciatis qui perferendis!",
+//     img: "",
+//   },
+//   {
+//     id: "4",
+//     date: new Date("4/29/2024"),
+//     username: "Ibrahim",
+//     rate: 3,
+//     comment:
+//       "Lorem, ipsum dolor edita, itaqi emos qui. Voluptatem veniam perspiciatis qui perferendis!",
+//     img: "",
+//   },
+//   {
+//     id: "5",
+//     date: new Date("4/29/2024"),
+//     username: "Fatima",
+//     rate: 4,
+//     comment:
+//       "Lorem, ipsum dolor edita, itaqi emos qui. Voluptatem veniam perspiciatis qui perferendis!",
+//     img: "",
+//   },
+//   {
+//     id: "6",
+//     date: new Date("4/29/2024"),
+//     username: "Marwa",
+//     rate: 5,
+//     comment:
+//       "Lorem, ipsum dolor edita, itaqi emos qui. Voluptatem veniam perspiciatis qui perferendis!",
+//     img: "",
+//   },
+// ]
+
+type Props = {
+  unit: UnitType
+}
+const UnitDetails = (props: Props) => {
+  const usersRates: Rating[] = getUnitData(props.unit.id)[0].ratings
+  const totalRating =
+    usersRates.reduce((pre, cur) => {
+      return pre + cur.rate
+    }, 0) / usersRates.length
+
+  // console.log("🚀 ~ UnitDetails ~ usersRates:", usersRates)
+
   return (
     <>
       <div className="w-full">
@@ -143,36 +159,27 @@ const UnitDetails = () => {
             {details
               ? details.map((item) => (
                   <div
-                    className=" flex items-center gap-2  rounded-lg bg-gray-100 px-3 py-2 "
+                    className="flex items-center gap-2 rounded-lg bg-gray-100 px-3 py-2"
                     key={item.id}>
                     {item.icon}
-                    <span className="text-sm text-foreground-600 ">{`${item.count && parseInt(item.count) > 0 ? item.count : ""} ${item.label}`}</span>
+                    <span className="text-sm text-foreground-600">{`${item.count && parseInt(item.count) > 0 ? item.count : ""} ${item.label}`}</span>
                   </div>
                 ))
               : null}
           </div>
 
-          <div className=" my-6 text-lg/6 text-foreground-600 max-lg:text-center ">
-            توفر هذه الفيلا الفسيحة والأنيقة إقامة فاخرة للعائلات ورجال الأعمال
-            الباحثين عن الإقامة المثالية في جدة. تتكون من 3 غرف نوم وتحتوي غرفة النوم
-            الرئيسية على حمام داخلي خاص بها لراحتك ، في حين أن غرفتي النوم الثانية
-            والثالثة مناسبة لأفراد الأسرة والأطفال وتحتوي على 4 دورات مياه ومطبخ
-            مجهّز بالكامل وغسالة ملابس، كما يحتوي المجمع على حمام سباحة وحديقة خارجية
-            وموقف سيارات. ستتمتع أيضًا بإمكانية الوصول إلى العديد من مناطق الجذب
-            ومراكز التسوق مثل روشان مول وآية مول ، وتقع على مسافة قريبة من مطار الملك
-            عبد العزيز ، الذي يبعد 4 كيلو متر فقط.
+          <div className="my-6 text-lg/6 text-foreground-600 max-lg:text-center">
+            {props.unit.title}
           </div>
           <hr className="my-5 w-full" />
 
           <div>
-            <h3 className="my-5 text-lg font-medium  lg:text-2xl">
-              المميزات الخاصة
-            </h3>
-            <div className="icons mt-5 flex  flex-wrap  items-start gap-3">
+            <h3 className="my-5 text-lg font-medium lg:text-2xl">المميزات الخاصة</h3>
+            <div className="icons mt-5 flex flex-wrap items-start gap-3">
               {specialDetails &&
                 specialDetails.map((item, count) => (
                   <div
-                    className=" flex gap-2  rounded-lg bg-gray-100 px-4 py-2 "
+                    className="flex gap-2 rounded-lg bg-gray-100 px-4 py-2"
                     key={item.id}>
                     <span className="text-foreground-600">{item.label}</span>
                   </div>
@@ -182,20 +189,17 @@ const UnitDetails = () => {
 
           <hr className="my-5 w-full" />
 
-          <div className=" space-y-4">
-            <h3 className=" flex flex-col text-xl font-medium lg:text-2xl">
+          <div className="space-y-4">
+            <h3 className="flex flex-col text-xl font-medium lg:text-2xl">
               اعلى التقيمات
             </h3>
 
-            <div className="  flex items-center gap-2 ">
-              <Star
-                size={20}
-                className={cn("  text-yellow-400", "fill-yellow-400")}
-              />
-              <span className="font-meduim text-xl ">(4.4)</span>
+            <div className="flex items-center gap-2">
+              <Star size={20} className={cn("text-yellow-400", "fill-yellow-400")} />
+              <span className="font-meduim text-xl">({totalRating})</span>
             </div>
 
-            <div className=" grid-cols-2 gap-5 max-sm:space-y-4 sm:grid   ">
+            <div className="grid-cols-2 gap-5 max-sm:space-y-4 sm:grid">
               {usersRates.map((item) => {
                 return (
                   <PeopleRate
@@ -204,7 +208,7 @@ const UnitDetails = () => {
                     user={item.username}
                     rate={item.rate}
                     comment={item.comment}
-                    img={""}
+                    img={item.img}
                   />
                 )
               })}

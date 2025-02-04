@@ -22,7 +22,7 @@ const SmallScreenModalWrapper = ({
     defaultValue: false,
     initializeWithValue: false,
   })
-  console.log("🚀 ~ matches:", matches)
+  // console.log("🚀 ~ matches:", matches)
   return matches ? (
     <Modal size="full" isOpen={isOpen} onClose={onClose}>
       <ModalContent>

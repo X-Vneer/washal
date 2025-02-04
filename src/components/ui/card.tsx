@@ -1,10 +1,12 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react"
+import Link from "next/link"
 
 import { UnitType } from "@/types/unit"
 
 type Props = UnitType
 const Card = ({
+  id,
   title,
   price,
   bedrooms,
@@ -15,12 +17,12 @@ const Card = ({
 }: Props) => {
   return (
     <>
-      <a href="#" className="block rounded-lg p-4">
+      <Link href={`/unit/${id + ""}`} className="block rounded-lg p-4">
         <img
           alt=""
           src={
             images && images.length > 0
-              ? images[1]
+              ? images[0]
               : "https://images.unsplash.com/photo-1613545325278-f24b0cae1224?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
           }
           className="h-56 w-full rounded-md object-cover"
@@ -42,7 +44,7 @@ const Card = ({
             </div>
           </dl>
 
-          <div className="mt-6 flex items-center gap-8 text-xs">
+          <div className="flex-wrap mt-6 flex items-center gap-8 text-xs">
             {swimming_pool && swimming_pool > 0 ? (
               <div className="sm:inline-flex sm:shrink-0 sm:items-center sm:gap-2">
                 <svg
@@ -148,7 +150,7 @@ const Card = ({
             )}
           </div>
         </div>
-      </a>
+      </Link>
     </>
   )
 }

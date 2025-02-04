@@ -10,6 +10,7 @@ import UserTabs from "@/components/user/user-tabs"
 type Props = {}
 
 const page = (props: Props) => {
+  return <>User</>
   return (
     <>
       <PageHero

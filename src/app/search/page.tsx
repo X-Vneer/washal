@@ -15,6 +15,8 @@ type Props = {
 }
 
 const page = ({ searchParams }: Props) => {
+
+  
   const {
     range: [from, to],
     label,
@@ -23,14 +25,14 @@ const page = ({ searchParams }: Props) => {
   return (
     <>
       <PageHero title="الوجهة" image={image2} />
-      <SearchBar
+      {/* <SearchBar
         initial={{
           city: "",
           guests: searchParams.guests,
           from: from,
           to: to,
-        }}
-      />
+        }} 
+      />*/}
       <div className="container py-8">
         <p className="py-1 text-xl font-bold text-gray-900 lg:p-2 lg:text-4xl">
           اكتشف مكان إقامتك المثالي
@@ -40,17 +42,17 @@ const page = ({ searchParams }: Props) => {
             <span className="text-xs text-foreground-500 lg:text-sm">
               تصفّح وحداتنا المميزة وتمتع ببحث متقدم
             </span>
-            <div className="py-1 text-xs text-foreground-600 lg:py-2">
+            {/* <div className="py-1 text-xs text-foreground-600 lg:py-2">
               من <DateFormatter date={from} className="lg:text-lg" /> الى{" "}
               <DateFormatter className="lg:text-lg" date={to} />
               <span className="px-2">
                 ({nights}) {label}
               </span>
-            </div>
+            </div> */}
           </div>
-          <div className="max-lg:hidden">
+          {/* <div className="max-lg:hidden">
             <Category />
-          </div>
+          </div> */}
         </div>
       </div>
       <section>
@@ -68,6 +70,7 @@ const page = ({ searchParams }: Props) => {
                   </div>
                 }>
                 <SearchedUnits />
+                {/* <SearchedUnits filteredUnits={}/> */}
               </Suspense>
             </div>
           </div>

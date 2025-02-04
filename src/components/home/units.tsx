@@ -7,16 +7,17 @@ import { Navigation } from "swiper/modules"
 import { Swiper, SwiperSlide } from "swiper/react"
 
 import { HotelType } from "@/types/hotels"
-
-import Card from "../ui/card"
 import { UnitType } from "@/types/unit"
 
+import Card from "../ui/card"
+
 type Props = {
-  hotels: HotelType[]
+  // hotels: HotelType[]
   units: UnitType[]
   title: string
 }
-const Hotels = ({ hotels,units, title }: Props) => {
+// const Hotels = ({ hotels,units, title }: Props) => {
+const Units = ({ units, title }: Props) => {
   const [state, setState] = useState(false)
 
   const unit_items = units.map((unit) => {
@@ -27,13 +28,6 @@ const Hotels = ({ hotels,units, title }: Props) => {
     )
   })
 
-  // const items = hotels.map((hotel) => {
-  //   return (
-  //     <SwiperSlide key={hotel.id}>
-  //       <Card {...hotel} />
-  //     </SwiperSlide>
-  //   )
-  // })
 
   // slider REf
   const navigationPrevRef = useRef(null)
@@ -97,4 +91,5 @@ const Hotels = ({ hotels,units, title }: Props) => {
   )
 }
 
-export default Hotels
+export default Units
+// export default Hotels

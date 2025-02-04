@@ -1,7 +1,7 @@
-import unitsData from "@/data/units.json";
+import unitsData from "@/data/units.json"
 
-const getUnitsData = async () => {
-  return unitsData;
-};
+const getUnitsData = () => {
+  return unitsData
+}
 
-export default getUnitsData;
+export default getUnitsData

@@ -6,17 +6,14 @@ import { ChevronLeft, ChevronRight } from "lucide-react"
 import { Navigation } from "swiper/modules"
 import { Swiper, SwiperSlide } from "swiper/react"
 
-import { HotelType } from "@/types/hotels"
 import { UnitType } from "@/types/unit"
 
 import Card from "../ui/card"
 
 type Props = {
-  // hotels: HotelType[]
   units: UnitType[]
   title: string
 }
-// const Hotels = ({ hotels,units, title }: Props) => {
 const Units = ({ units, title }: Props) => {
   const [state, setState] = useState(false)
 
@@ -27,7 +24,6 @@ const Units = ({ units, title }: Props) => {
       </SwiperSlide>
     )
   })
-
 
   // slider REf
   const navigationPrevRef = useRef(null)
@@ -92,4 +88,3 @@ const Units = ({ units, title }: Props) => {
 }
 
 export default Units
-// export default Hotels

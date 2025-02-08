@@ -21,7 +21,7 @@ export default function Error({
       <h2>Something went wrong!</h2>
       <Button
         color="danger"
-        onClick={
+        onPress={
           // Attempt to recover by trying to re-render the segment
           () => reset()
         }>

@@ -1,8 +1,36 @@
 /* eslint-disable @next/next/no-img-element */
-import React from "react"
+import React, { useEffect, useState } from "react"
+import Image, { StaticImageData } from "next/image"
 import Link from "next/link"
+import { noavatar } from "@/assets"
+// import { noavatar } from "@/assets"
+import { image1 as im1 } from "@/assets/images/hotel_1"
+import { image1 as im2 } from "@/assets/images/hotel_2"
+import { image1 as im3 } from "@/assets/images/hotel_3"
+import { image1 as im4 } from "@/assets/images/hotel_4"
+import { image1 as im5 } from "@/assets/images/hotel_5"
+import { image1 as im6 } from "@/assets/images/hotel_6"
+import { image1 as im7 } from "@/assets/images/hotel_7"
+import { image1 as im8 } from "@/assets/images/hotel_8"
+import { image1 as im9 } from "@/assets/images/hotel_9"
+
+// import myImage from "@/assets/images/hotel_1/ratings/noavatar.png" // Adjust path and extension
 
 import { UnitType } from "@/types/unit"
+
+// import dynamic from "next/dynamic"
+
+const imageMap: { [key: number]: StaticImageData } = {
+  1: im1,
+  2: im2,
+  3: im3,
+  4: im4,
+  5: im5,
+  6: im6,
+  7: im7,
+  8: im8,
+  9: im9,
+}
 
 type Props = UnitType
 const Card = ({
@@ -15,17 +43,17 @@ const Card = ({
   swimming_pool,
   images,
 }: Props) => {
+  const selectedImage = imageMap[id] || im1 // Default to image1 if id is not found
+
   return (
     <>
       <Link href={`/unit/${id + ""}`} className="block rounded-lg p-4">
-        <img
+        <Image
           alt=""
-          src={
-            images && images.length > 0
-              ? images[0]
-              : "https://images.unsplash.com/photo-1613545325278-f24b0cae1224?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-          }
+          src={selectedImage}
           className="h-56 w-full rounded-md object-cover"
+          width={500}
+          height={300}
           loading="lazy"
         />
 
@@ -44,7 +72,7 @@ const Card = ({
             </div>
           </dl>
 
-          <div className="flex-wrap mt-6 flex items-center gap-8 text-xs">
+          <div className="mt-6 flex flex-wrap items-center gap-8 text-xs">
             {swimming_pool && swimming_pool > 0 ? (
               <div className="sm:inline-flex sm:shrink-0 sm:items-center sm:gap-2">
                 <svg

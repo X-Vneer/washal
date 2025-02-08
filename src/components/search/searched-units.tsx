@@ -16,7 +16,7 @@ const SearchedUnits = (props: Props) => {
   //   setTimeout(() => res("resolved"), 4000)
   // })
 
-  const { setSearchedUnits, searchedUnits } = useSearchedUnitsStore()
+  const { setSearchedUnits, searchedUnits = [] } = useSearchedUnitsStore()
   // console.log("🚀 ~ SearchedUnits ~ searchedUnits:", searchedUnits)
 
   return (

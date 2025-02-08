@@ -4,7 +4,7 @@
 import React, { useState } from "react"
 import Link from "next/link"
 import { useSearchParams } from "next/navigation"
-import { image1, image2, image3, image4 } from "@/assets"
+// import { image1, image2, image3, image4 } from "@/assets"
 import { cn } from "@/utils/cn"
 import { Button } from "@nextui-org/button"
 import { ChevronLeft, ChevronRight, Eye, Sofa, Users } from "lucide-react"

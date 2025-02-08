@@ -13,7 +13,6 @@ import {
   NavbarMenuToggle,
 } from "@nextui-org/navbar"
 
-import Login from "../auth/login"
 import Logo from "../ui/logo"
 
 type Props = {}
@@ -74,11 +73,6 @@ const Header = (props: Props) => {
             )
           })}
         </NavbarContent>
-        {/* <NavbarContent justify="end">
-          <NavbarItem>
-            <Login />
-          </NavbarItem>
-        </NavbarContent> */}
         <NavbarMenu>
           {routes.map((route, index) => (
             <NavbarMenuItem

@@ -12,6 +12,7 @@ import { UnitType } from "@/types/unit"
 
 import SmallScreenModalWrapper from "../common/small-screens-modal-wrapper"
 import DateRangePicker from "../ui/date-range-picker"
+import { WASHAL_CONTACT_NUMBER } from "@/utils/washal-number"
 
 type Props = {
   unit: UnitType
@@ -56,7 +57,7 @@ const CheckAvailability = (props: Props) => {
   )
 
   const handleReservation = async () => {
-    const phoneNumber = "+972598654780"
+    const phoneNumber = WASHAL_CONTACT_NUMBER
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`
     window.open(whatsappUrl, "_blank")
   }

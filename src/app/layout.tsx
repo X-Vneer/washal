@@ -15,10 +15,10 @@ import "swiper/css/navigation"
 import MyReactQueryProvider from "@/providers/react-query"
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools"
 
-const tajwal = Tajawal({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "700"],
-})
+// const tajwal = Tajawal({
+//   subsets: ["latin"],
+//   weight: ["300", "400", "500", "700"],
+// })
 
 export const metadata: Metadata = {
   title: "Washal",
@@ -32,8 +32,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ar" dir="rtl">
-      {/* <body className={""}> */}
-      <body className={tajwal.className}>
+      <body className={""}>
+      {/* <body className={tajwal.className}> */}
         <NextUiProvider>
             {/* <MyReactQueryProvider> */}
               <Header />

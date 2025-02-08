@@ -138,9 +138,9 @@ const Filters = ({ className }: Props) => {
             {filteredUnits && filteredUnits.length}
             <button
               type="button"
-              className="bg-transparent text-sm"
+              className="bg-transparent text-sm mx-2 text-red-500 font-semibold"
               onClick={clearAllFeatures}>
-              مسح الكل
+              مسح الفلاتر
             </button>
           </p>
         </div>

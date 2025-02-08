@@ -17,11 +17,11 @@ type Props = {
 const page = ({ searchParams }: Props) => {
 
   
-  const {
-    range: [from, to],
-    label,
-    nights,
-  } = parseDateRange(searchParams.from, searchParams.to)
+  // const {
+  //   range: [from, to],
+  //   label,
+  //   nights,
+  // } = parseDateRange(searchParams.from, searchParams.to)
   return (
     <>
       <PageHero title="الوجهة" image={image2} />

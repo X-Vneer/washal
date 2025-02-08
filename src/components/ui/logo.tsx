@@ -11,11 +11,12 @@ type Props = {
 
 const Logo = ({ className }: Props) => {
   return (
-    <div className="shrink-0">
-      <Link href={"/"}>
+    <Link href={"/"}>
+      <div className="flex flex-row-reverse items-center sm:flex-row">
         <Image src={logo} alt="logo" className={cn("h-[56px] w-full", className)} />
-      </Link>
-    </div>
+        <div className="text-2xl font-bold">وشل</div>
+      </div>
+    </Link>
   )
 }
 

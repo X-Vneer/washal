@@ -54,12 +54,7 @@ const Header = (props: Props) => {
             className="sm:hidden"
           />
           <NavbarBrand className="grow-0 basis-[unset] justify-self-end">
-            <Link
-              href={"/"}
-              className="flex flex-row-reverse items-center sm:flex-row">
-              <Logo />
-              <NavbarItem className="text-2xl font-bold">وشل</NavbarItem>
-            </Link>
+            <Logo />
           </NavbarBrand>
         </NavbarContent>
 

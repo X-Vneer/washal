@@ -51,5 +51,5 @@
 import getUnitsData from "@/api/services/get-units-data";
 
 export const testimonials = getUnitsData().flatMap((item) =>
-  item.ratings.slice(0, 2).map((rating) => rating),
+  item.ratings.slice(0, 1).map((rating) => rating),
 )

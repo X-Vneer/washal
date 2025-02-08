@@ -2,7 +2,7 @@
 
 /* eslint-disable @next/next/no-img-element */
 import React, { useRef, useState } from "react"
-import { image2 } from "@/assets"
+// import { image2 } from "@/assets"
 import { useUnitStore } from "@/stores/unit-store-provider"
 import { Button } from "@nextui-org/button"
 import { Modal, ModalBody, ModalContent } from "@nextui-org/modal"

@@ -22,7 +22,7 @@ const FavoriteButton = ({ unitId, className }: Props) => {
 
   return (
     <Button
-      onClick={handleClick}
+    onClick ={handleClick}
       isIconOnly
       variant="light"
       radius="full"

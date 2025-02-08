@@ -40,13 +40,22 @@ const HeroSection = () => {
             },
           }}
           className={`relative h-[70vh] cursor-grab select-none overflow-hidden md:h-[91vh]`}>
-          <img
+          {/* <img
             alt=""
             src={data.image}
             className="h-full w-full object-cover "
             loading="lazy"
+          /> */}
+          <Image
+            alt="background slider "
+            src={data.image}
+            fill
+            style={{ objectFit: "cover" }}
+            loading="lazy"
+            onDragStart={handleDragStart}
+            role="presentation"
+            // className="h-full w-full"
           />
-
           {/* <Image
             loading="lazy"
             className="h-full w-full object-cover "
@@ -95,7 +104,7 @@ const HeroSection = () => {
             loop={true}
             modules={[Autoplay]}
             autoplay={{
-              delay: 10000,
+              delay: 5000,
             }}
             spaceBetween={30}
             slidesPerView={1}>

@@ -1,5 +1,5 @@
 import React, { Suspense } from "react"
-import { image2 } from "@/assets"
+// import { image2 } from "@/assets"
 import { parseDateRange } from "@/utils/parse-date-range"
 import { Loader2 } from "lucide-react"
 
@@ -9,6 +9,7 @@ import SearchBar from "@/components/common/search-bar"
 import Category from "@/components/search/category"
 import Filters from "@/components/search/filters"
 import SearchedUnits from "@/components/search/searched-units"
+import { image2 } from "@/assets/images/hotel_1"
 
 type Props = {
   searchParams: { [key: string]: string | undefined }

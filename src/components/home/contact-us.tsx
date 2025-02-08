@@ -1,11 +1,12 @@
 import React from "react"
 
 import { WobbleCard } from "../ui/wobble-card"
+import { WASHAL_CONTACT_NUMBER } from "@/utils/washal-number"
 
 type Props = {}
 
 const ContactUs = (props: Props) => {
-  const phoneNumber = "+972598654780" // رقم الواتساب الخاص بك
+  const phoneNumber = WASHAL_CONTACT_NUMBER // رقم الواتساب الخاص بك
   return (
     <a href={`https://wa.me/${phoneNumber}?`} target="_blank" >
       <section id="contact-us" className="py-10">

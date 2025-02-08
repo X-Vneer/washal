@@ -11,8 +11,11 @@ import Testimonials from "@/components/home/testimonials"
 import Units from "@/components/home/units"
 import YourDestination from "@/components/home/your-destination"
 
-export default async function Home() {
-  const UnitsData: UnitType[] = await getUnitsData()
+export default function Home() {
+  const UnitsData: UnitType[] = getUnitsData()
+  if (!UnitsData) {
+    return null
+  }
   return (
     <>
       <main>

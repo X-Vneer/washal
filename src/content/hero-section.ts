@@ -1,4 +1,4 @@
-import { image0, image1, image2, image3, image4 } from "@/assets"
+// import { image0, image1, image2, image3, image4 } from "@/assets"
 
 export const sliderImages = [
   {

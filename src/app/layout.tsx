@@ -12,6 +12,8 @@ import "swiper/css"
 import "swiper/css/pagination"
 import "swiper/css/navigation"
 
+import Head from "next/head"
+import Link from "next/link"
 import MyReactQueryProvider from "@/providers/react-query"
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools"
 
@@ -33,14 +35,14 @@ export default function RootLayout({
   return (
     <html lang="ar" dir="rtl">
       <body className={""}>
-      {/* <body className={tajwal.className}> */}
+        {/* <body className={tajwal.className}> */}
         <NextUiProvider>
-            {/* <MyReactQueryProvider> */}
-              <Header />
-              {children}
-              <Footer />
-              {/* <ReactQueryDevtools initialIsOpen={false} /> */}
-            {/* </MyReactQueryProvider> */}
+          {/* <MyReactQueryProvider> */}
+          <Header />
+          {children}
+          <Footer />
+          {/* <ReactQueryDevtools initialIsOpen={false} /> */}
+          {/* </MyReactQueryProvider> */}
         </NextUiProvider>
       </body>
     </html>

@@ -6,7 +6,6 @@ import { ChevronLeft, ChevronRight } from "lucide-react"
 import { Navigation } from "swiper/modules"
 import { Swiper, SwiperSlide } from "swiper/react"
 
-import { HotelType } from "@/types/hotels"
 import { UnitType } from "@/types/unit"
 
 import Card from "../ui/card"

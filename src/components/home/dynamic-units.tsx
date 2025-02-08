@@ -2,7 +2,7 @@
 
 import React from "react"
 import getUnitData from "@/api/services/get-unit-data"
-import { useFavoriteStore } from "@/stores/favoriteStore"
+import { useFavoriteStore } from "@/stores/favorite-units-store"
 
 import Units from "./units"
 

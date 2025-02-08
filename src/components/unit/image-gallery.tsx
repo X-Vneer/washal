@@ -2,7 +2,6 @@
 
 /* eslint-disable @next/next/no-img-element */
 import React from "react"
-import { image1, image2, image3 } from "@/assets"
 import { useUnitStore } from "@/stores/unit-store-provider"
 import { cn } from "@/utils/cn"
 import { useIsomorphicLayoutEffect } from "framer-motion"
@@ -24,8 +23,6 @@ type Props = {
 
 const ImageGallery = (props: Props) => {
   const openImageSlider = useUnitStore((state) => state.openImageSlider)
-
-  // console.log("🚀 ~ props.unit:", props.unit)
 
   const matches = useMediaQuery("(max-width:1023px)")
   useIsomorphicLayoutEffect(() => {
@@ -147,36 +144,6 @@ const ImageGallery = (props: Props) => {
               <p>No images available</p>
             )}
           </Swiper>
-          {/* <Swiper
-            dir="ltr"
-            className="w-full"
-            modules={[Autoplay, Navigation, Pagination]}
-            loop={true}
-            slidesPerView={1}
-            pagination={{
-              clickable: true,
-              dynamicBullets: true,
-            }}
-            autoplay={{
-              delay: 7500,
-              disableOnInteraction: true,
-            }}>
-            {props.unit.images.map((e, i) => {
-              return (
-                <SwiperSlide key={i}>
-                  <div className="h-[50vh]" onClick={openImageSlider}>
-                   
-                    <img
-                      alt=""
-                      src={e}
-                      className="h-full w-full rounded-md object-cover"
-                      loading="lazy"
-                    />
-                  </div>
-                </SwiperSlide>
-              )
-            })}
-          </Swiper> */}
         </div>
       </main>
     </>

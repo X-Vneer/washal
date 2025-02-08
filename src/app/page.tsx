@@ -22,7 +22,6 @@ export default async function Home() {
       <Features />
       {/* <YourDestination /> */}
       <Units units={UnitsData} title={"أنواع الشاليهات"} />
-      {/* <Hotels hotels={RoomsTypes} units={UnitsData} title={"أنواع الشاليهات"} /> */}
       <Testimonials />
       <ContactUs />
     </>

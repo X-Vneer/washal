@@ -1,7 +1,7 @@
 "use client"
 
 import React from "react"
-import { useFavoriteStore } from "@/stores/favoriteStore"
+import { useFavoriteStore } from "@/stores/favorite-units-store"
 import { Button } from "@nextui-org/button"
 import { Heart } from "lucide-react"
 

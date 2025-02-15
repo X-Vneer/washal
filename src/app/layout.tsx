@@ -12,11 +12,6 @@ import "swiper/css"
 import "swiper/css/pagination"
 import "swiper/css/navigation"
 
-import Head from "next/head"
-import Link from "next/link"
-import MyReactQueryProvider from "@/providers/react-query"
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools"
-
 // const tajwal = Tajawal({
 //   subsets: ["latin"],
 //   weight: ["300", "400", "500", "700"],
@@ -37,12 +32,9 @@ export default function RootLayout({
       <body className={""}>
         {/* <body className={tajwal.className}> */}
         <NextUiProvider>
-          {/* <MyReactQueryProvider> */}
           <Header />
           {children}
           <Footer />
-          {/* <ReactQueryDevtools initialIsOpen={false} /> */}
-          {/* </MyReactQueryProvider> */}
         </NextUiProvider>
       </body>
     </html>

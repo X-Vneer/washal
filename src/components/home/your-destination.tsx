@@ -1,6 +1,7 @@
 // import { image1, image2, image3 } from "@/assets"
 
-import { image1, image2, image3 } from "../../../public/assets"
+// import { image1, image2, image3 } from "../../../public/assets"
+import { image1, image2, image3 } from "../../../public/assets/images/hotel_1"
 import { DirectionAwareHover } from "../ui/direction-aware-hover"
 
 const YourDestination = () => {

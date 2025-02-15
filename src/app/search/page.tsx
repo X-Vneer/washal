@@ -9,7 +9,9 @@ import SearchBar from "@/components/common/search-bar"
 import Category from "@/components/search/category"
 import Filters from "@/components/search/filters"
 import SearchedUnits from "@/components/search/searched-units"
-import { image2 } from "@/assets/images/hotel_1"
+import { image1 } from "../../../public/assets/images/hotel_1"
+// import { image2 } from "../../../public/assets"
+// import { image2 } from "@/assets/images/hotel_1"
 
 type Props = {
   searchParams: { [key: string]: string | undefined }
@@ -25,7 +27,7 @@ const page = ({ searchParams }: Props) => {
   // } = parseDateRange(searchParams.from, searchParams.to)
   return (
     <>
-      <PageHero title="الوجهة" image={image2} />
+      <PageHero title="الوجهة" image={image1} />
       {/* <SearchBar
         initial={{
           city: "",

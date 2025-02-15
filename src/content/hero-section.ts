@@ -1,8 +1,11 @@
 // import { image0, image1, image2, image3, image4 } from "@/assets"
+import { image1 as im1 } from "../../public/assets/images/hotel_1"
+import { image1 as im2 } from "../../public/assets/images/hotel_2"
+import { image1 as im3 } from "../../public/assets/images/hotel_3"
 
 export const sliderImages = [
   {
-    image: "/assets/images/hotel_1/2.png",
+    image: im1,
 
     content: [
       { size: "sm", title: "استمتع بالهدوء والراحة في قلب الطبيعة" },
@@ -14,7 +17,7 @@ export const sliderImages = [
     ],
   },
   {
-    image: "/assets/images/hotel_2/4.png",
+    image: im2,
     content: [
       { size: "sm", title: "عنوان قصير بهذا الطول " },
       {
@@ -25,7 +28,7 @@ export const sliderImages = [
     ],
   },
   {
-    image: "/assets/images/hotel_9/5.png",
+    image: im3,
     content: [
       {
         size: "lg",
@@ -36,7 +39,7 @@ export const sliderImages = [
     ],
   },
   {
-    image: "/assets/images/hotel_3/3.png",
+    // image: "/assets/images/hotel_3/3.png",
     content: [
       {
         size: "lg",

@@ -13,8 +13,8 @@ type Props = {
 const Logo = ({ className }: Props) => {
   return (
     <Link href={"/"}>
-      <div className="flex flex-row-reverse items-center sm:flex-row">
-        <Image src={logo} alt="logo" className={cn("h-[56px] w-full", className)} />
+      <div className="flex flex-row-reverse gap-3 items-center sm:flex-row">
+        <Image src={logo} alt="logo" className={cn("h-[48px] w-[40px]", className)} />
         <div className="text-2xl font-bold">وشل</div>
       </div>
     </Link>

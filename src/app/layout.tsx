@@ -12,10 +12,10 @@ import "swiper/css"
 import "swiper/css/pagination"
 import "swiper/css/navigation"
 
-// const tajwal = Tajawal({
-//   subsets: ["latin"],
-//   weight: ["300", "400", "500", "700"],
-// })
+const tajawal = Tajawal({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "700"],
+})
 
 export const metadata: Metadata = {
   title: "Washal",
@@ -29,8 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ar" dir="rtl">
-      <body className={""}>
-        {/* <body className={tajwal.className}> */}
+      <body className={tajawal.className}>
         <NextUiProvider>
           <Header />
           {children}

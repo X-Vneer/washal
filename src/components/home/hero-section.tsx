@@ -7,6 +7,7 @@ import { cn } from "@/utils/cn"
 import { domAnimation, LazyMotion, m } from "framer-motion"
 import { Autoplay } from "swiper/modules"
 import { Swiper, SwiperSlide } from "swiper/react"
+import { image5 } from "../../../public/assets/images/hotel_1"
 
 const textVariants = {
   hidden: (custom: number) => ({
@@ -42,13 +43,13 @@ const HeroSection = () => {
           className={`relative h-[70vh] cursor-grab select-none overflow-hidden md:h-[91vh]`}>
           {/* <img
             alt=""
-            src={data.image}
+            src={data.image || "/path/to/default/image.jpg"}
             className="h-full w-full object-cover "
             loading="lazy"
           /> */}
           <Image
             alt="background slider "
-            src={data.image}
+            src={data.image || image5}
             fill
             style={{ objectFit: "cover" }}
             loading="lazy"

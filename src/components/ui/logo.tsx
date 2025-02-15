@@ -3,7 +3,7 @@ import Image from "next/image"
 import Link from "next/link"
 // import { logo } from "@/assets"
 import { cn } from "@/utils/cn"
-import { logo } from "@/assets"
+import { logo } from "../../../public/assets"
 
 type Props = {
   className?: string

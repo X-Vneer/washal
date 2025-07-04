@@ -25,35 +25,34 @@ const CheckAvailability = (props: Props) => {
   const searchParams = useSearchParams()
   const state = useState({
     start: parseDate(
-      parseDateRange(searchParams.get("from"), searchParams.get("to")).range[0],
+      parseDateRange(searchParams.get("from"), searchParams.get("to")).range[0]
     ),
     end: parseDate(
-      parseDateRange(searchParams.get("from"), searchParams.get("to")).range[1],
+      parseDateRange(searchParams.get("from"), searchParams.get("to")).range[1]
     ),
   })
 
   const parsedRange = parseDateRange(
     state[0].start.toString(),
-    state[0].end.toString(),
+    state[0].end.toString()
   )
-  
 
-  let totalPrice =
-    dailyPrice * parsedRange.nights +
-    ((parsedRange.nights * VAT) / 100) * dailyPrice +
-    CleaningService
+  let totalPrice = dailyPrice * parsedRange.nights
 
   const modalState = useDisclosure()
 
   // handling reservation
   const encodedMessage = encodeURIComponent(
     `مرحبًا!
-                    أنا مهتم بحجز مكان الإقامة
-        (${props.unit.title}).
-                      موعد وصولي هو ${state[0].start.toString()}
-                           ومغادرتي هو ${state[0].start.toString()}،
-          وسيكون السعر الإجمالي ${totalPrice} ريال سعودي.
-             واسمحوا لي أن أعرف إذا كان متاحا.`,
+أنا مهتم بحجز مكان الإقامة (${props.unit.title}).
+موعد وصولي هو ${state[0].start.toString()}، 
+وموعد مغادرتي هو ${state[0].end.toString()}.
+
+عدد الليالي: ${parsedRange.nights} ليلة
+سعر الليلة: ${props.unit.price} ريال سعودي
+السعر الإجمالي: ${totalPrice} ريال سعودي
+
+فضلاً، أعلِموني إذا كان متاحًا في هذه الفترة. وشكرًا مقدمًا!`
   )
 
   const handleReservation = async () => {
@@ -73,10 +72,6 @@ const CheckAvailability = (props: Props) => {
               </span>{" "}
               في الليلة
             </p>
-            <p className="flex items-center gap-2 text-sm text-foreground-500">
-              <Star className={"h-5 w-5 fill-yellow-500 text-yellow-500"} />
-              <span className="mt-2">5 (3 تقيميات)</span>
-            </p>
           </div>
           <div className="relative w-full border-b">
             <DateRangePicker
@@ -94,18 +89,18 @@ const CheckAvailability = (props: Props) => {
               <p>صافي إجمالي السعر في الليلة</p>
               <span className="font-bold">SAR {props.unit.price}</span>
             </div>
-            <div className="flex items-center justify-between gap-4 text-sm text-foreground-500">
+            {/* <div className="flex items-center justify-between gap-4 text-sm text-foreground-500">
               <p>{VAT}% VAT في الليلة</p>
               <span>SAR {VAT}</span>
-            </div>
+            </div> */}
             <div className="flex items-center justify-between gap-4 text-sm text-foreground-500">
               <p>عدد الليالي</p>
               <span> {parsedRange.label}</span>
             </div>
-            <div className="flex items-center justify-between gap-4 text-sm text-foreground-500">
+            {/* <div className="flex items-center justify-between gap-4 text-sm text-foreground-500">
               <p>رسوم خدمة النظافة</p>
               <span>SAR {CleaningService}</span>
-            </div>
+            </div> */}
           </div>
           <div className="flex justify-between py-4 text-lg font-bold">
             <p>إجمالي السعر</p>
@@ -115,7 +110,8 @@ const CheckAvailability = (props: Props) => {
             onClick={handleReservation}
             fullWidth
             size="lg"
-            className="bg-primaryColor text-lg font-bold text-white">
+            className="bg-primaryColor text-lg font-bold text-white"
+          >
             أحجز الان
           </Button>
         </div>
@@ -125,7 +121,8 @@ const CheckAvailability = (props: Props) => {
           onClick={modalState.onOpen}
           fullWidth
           size="lg"
-          className="bg-primaryColor text-lg font-bold text-white">
+          className="bg-primaryColor text-lg font-bold text-white"
+        >
           تفاصيل الحجز
         </Button>
       </div>

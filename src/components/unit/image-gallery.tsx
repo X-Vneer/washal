@@ -41,36 +41,9 @@ const ImageGallery = (props: Props) => {
               <h1 className="mb-3 text-lg font-medium text-gray-900 lg:text-3xl">
                 {props.unit.title}
               </h1>
-              <div className="flex grow items-center gap-3 text-sm text-gray-900">
-                <div className="flex items-center gap-1">
-                  {new Array(5).fill("").map((e, i) => {
-                    return (
-                      <Star
-                        size={15}
-                        key={`stars_filled_${i}`}
-                        className={cn(
-                          "text-yellow-400",
-                          i < 5 ? "fill-yellow-400" : "fill-white",
-                        )}
-                      />
-                    )
-                  })}
-                  <span>5</span>
-                </div>
-                <span className="text-lg font-bold">.</span>
-                <div className="flex items-center gap-2">
-                  <MapPin
-                    size={20}
-                    strokeWidth={1.2}
-                    className="text-primaryColor"
-                  />
-                  <span>المدينة</span>
-                </div>
-              </div>
             </div>
 
             <div className="flex gap-4">
-              <FavoriteButton unitId={props.unit.id} />
               <ShareButton />
             </div>
           </div>
@@ -90,13 +63,14 @@ const ImageGallery = (props: Props) => {
               {props.unit.images
                 .slice(
                   1,
-                  props.unit.images.length > 4 ? 5 : props.unit.images.length,
+                  props.unit.images.length > 4 ? 5 : props.unit.images.length
                 )
                 .map((e, i) => {
                   return (
                     <div
                       key={i}
-                      className="group relative aspect-[2.7/2.1] cursor-pointer overflow-hidden">
+                      className="group relative aspect-[2.7/2.1] cursor-pointer overflow-hidden"
+                    >
                       <img
                         alt=""
                         src={e}
@@ -126,7 +100,8 @@ const ImageGallery = (props: Props) => {
             loop={true}
             slidesPerView={1}
             pagination={{ clickable: true, dynamicBullets: true }}
-            autoplay={{ delay: 2500, disableOnInteraction: true }}>
+            autoplay={{ delay: 2500, disableOnInteraction: true }}
+          >
             {props.unit?.images?.length > 0 ? (
               props.unit.images.map((e, i) => (
                 <SwiperSlide key={i}>

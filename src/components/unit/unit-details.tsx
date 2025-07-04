@@ -1,102 +1,16 @@
-import React from "react"
-import getUnitData from "@/api/services/get-unit-data"
-import getUnitsData from "@/api/services/get-units-data"
-import { cn } from "@/utils/cn"
-import { Bath, BedDouble, BedSingle, Star, Trees } from "lucide-react"
-
-import { Rating, UnitType } from "@/types/unit"
-
-import PeopleRate from "./people-rate"
-
-// const details = [
-//   {
-//     id: "1",
-//     count: "2",
-//     label: "أسرة فردية",
-//     icon: <BedSingle className="text-primaryColor" strokeWidth={1.25} />,
-//   },
-//   {
-//     id: "2",
-//     count: "1",
-//     label: "سرير كبير",
-//     icon: <BedDouble className="text-primaryColor" strokeWidth={1.25} />,
-//   },
-//   {
-//     id: "3",
-//     count: "1",
-//     label: "سرير ملكة",
-//     icon: <BedDouble className="text-primaryColor" strokeWidth={1.25} />,
-//   },
-//   {
-//     id: "4",
-//     count: "4",
-//     label: "حمامات",
-//     icon: <Bath className="text-primaryColor" strokeWidth={1.25} />,
-//   },
-//   {
-//     id: "5",
-//     count: "0",
-//     label: "حمام سباحة عام",
-//     icon: <Bath className="text-primaryColor" strokeWidth={1.25} />,
-//   },
-//   {
-//     id: "6",
-//     count: "0",
-//     label: "جلسة خارجية",
-//     icon: <Trees className="text-primaryColor" strokeWidth={1.25} />,
-//   },
-// ]
-
-// const specialDetails = [
-//   {
-//     id: "1",
-//     label: "حديقة",
-//     icon: <Trees className="text-primaryColor3" strokeWidth={1.25} />,
-//   },
-//   {
-//     id: "2",
-//     label: "استقبال",
-//     icon: <BedDouble className="text-primaryColor3" strokeWidth={1.25} />,
-//   },
-//   {
-//     id: "3",
-//     count: "1",
-//     label: "تصميم عصري",
-//     icon: <BedDouble className="text-primaryColor3" strokeWidth={1.25} />,
-//   },
-//   {
-//     id: "4",
-//     count: "4",
-//     label: "مكواة و طاولة الكي",
-//     icon: <Bath className="text-primaryColor3" strokeWidth={1.25} />,
-//   },
-//   {
-//     id: "5",
-//     count: "0",
-//     label: "موقد طهي",
-//     icon: <Bath className="text-primaryColor3" strokeWidth={1.25} />,
-//   },
-// ]
-
-
+import { UnitType } from "@/types/unit"
 
 type Props = {
   unit: UnitType
 }
 const UnitDetails = (props: Props) => {
-  const usersRates: Rating[] = getUnitData(props.unit.id)[0].ratings
-  const totalRating =
-    usersRates.reduce((pre, cur) => {
-      return pre + cur.rate
-    }, 0) / usersRates.length
-
-  // console.log("🚀 ~ UnitDetails ~ usersRates:", usersRates)
-
   return (
     <>
       <div className="w-full">
         <div className="p-5">
-          <h2 className="mb-3 text-xl font-medium lg:text-3xl">تفاصيل الوحدة</h2>
+          <h2 className="mb-3 text-xl font-medium lg:text-3xl">
+            تفاصيل الوحدة
+          </h2>
           <hr className="w-full" />
 
           {/* create unit details icons */}
@@ -116,7 +30,6 @@ const UnitDetails = (props: Props) => {
           <div className="my-6 text-lg/6 text-foreground-600 max-lg:text-center">
             {props.unit.title}
           </div>
-          <hr className="my-5 w-full" />
 
           {/* <div>
             <h3 className="my-5 text-lg font-medium lg:text-2xl">المميزات الخاصة</h3>
@@ -131,7 +44,7 @@ const UnitDetails = (props: Props) => {
                 ))}
             </div>
           </div> */}
-
+          {/* 
           <hr className="my-5 w-full" />
 
           <div className="space-y-4">
@@ -158,7 +71,7 @@ const UnitDetails = (props: Props) => {
                 )
               })}
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </>

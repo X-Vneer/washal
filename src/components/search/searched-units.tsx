@@ -1,10 +1,8 @@
 "use client"
 
-import React from "react"
-import { useSearchedUnitsStore } from "@/stores/searched-units"
-
 import { UnitType } from "@/types/unit"
 
+import getUnitsData from "@/api/services/get-units-data"
 import UnitCard from "../ui/unit-card"
 
 type Props = {
@@ -12,20 +10,14 @@ type Props = {
 }
 
 const SearchedUnits = (props: Props) => {
-  // await new Promise((res) => {
-  //   setTimeout(() => res("resolved"), 4000)
-  // })
-
-  const { setSearchedUnits, searchedUnits = [] } = useSearchedUnitsStore()
-  // console.log("🚀 ~ SearchedUnits ~ searchedUnits:", searchedUnits)
+  const units = getUnitsData()
 
   return (
     <>
-      <div className="mt-5 block grid-cols-2 gap-5 max-sm:space-y-4 sm:grid lg:block lg:space-y-5">
-        {searchedUnits &&
-          searchedUnits.map((unit, i) => {
-            return <UnitCard key={i} unit={unit}/>
-          })}
+      <div className="mt-5 grid justify-center grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
+        {units.map((unit, i) => {
+          return <UnitCard key={i} unit={unit} />
+        })}
       </div>
     </>
   )

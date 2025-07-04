@@ -25,7 +25,7 @@ export default function Home() {
       <Features />
       {/* <YourDestination /> */}
       <Units units={UnitsData} title={"أنواع الشاليهات"} />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <ContactUs />
     </>
   )

@@ -14,7 +14,8 @@ const Footer = (props: Props) => {
             <Logo className="" />
 
             <p className="mt-4 max-w-xs text-gray-500">
-              نص بهذا الحجم نص بهذا الحجم تقريبا نص بهذا الحجم نص بهذا الحجم تقريبا
+              عيش أجواء الفخامة والخصوصية في وشل، مكان يجمع بين الراحة والجمال
+              بكل تفاصيله.
             </p>
 
             {/* <ul className="mt-8 flex gap-6">
@@ -143,8 +144,6 @@ const Footer = (props: Props) => {
                
               </ul>
             </div> */}
-
-           
           </div>
         </div>
 

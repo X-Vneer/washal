@@ -124,52 +124,27 @@ const Footer = (props: Props) => {
               </ul>
             </div> */}
 
-            <div>
-              <p className="font-medium text-gray-900">المدن</p>
-
-              <ul className="mt-6 space-y-4 text-sm">
-                <li>
-                  <a href="#" className="text-gray-700 transition hover:opacity-75">
-                    {" "}
-                    جدة{" "}
-                  </a>
-                </li>
-
-                <li>
-                  <a href="#" className="text-gray-700 transition hover:opacity-75">
-                    مكة
-                  </a>
-                </li>
-
-                <li>
-                  <a href="#" className="text-gray-700 transition hover:opacity-75">
-                    مدينة 1
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <div>
+            {/* <div>
               <p className="font-medium text-gray-900">روابط مفيدة</p>
 
               <ul className="mt-6 space-y-4 text-sm">
                 <li>
-                  <Link
-                    href="/#contact-us"
-                    className="text-gray-700 transition hover:opacity-75">
-                    تواصل معنا
+                  <Link href="/" className="text-gray-700 transition hover:opacity-75">
+                    الموقع الرئيسي
                   </Link>
                 </li>
 
                 <li>
-                  <Link
-                    href="/#client-opinions"
-                    className="text-gray-700 transition hover:opacity-75">
-                    آراء عملائنا
+                  <Link href="/search" className="text-gray-700 transition hover:opacity-75">
+                    البحث
                   </Link>
                 </li>
+
+               
               </ul>
-            </div>
+            </div> */}
+
+           
           </div>
         </div>
 

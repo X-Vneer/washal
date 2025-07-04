@@ -81,7 +81,7 @@ const Card = ({
             </div>
           </dl>
 
-          <div className="mt-6 flex flex-wrap items-center gap-8 text-xs">
+          {/* <div className="mt-6 flex flex-wrap items-center gap-8 text-xs">
             {swimming_pool && swimming_pool > 0 ? (
               <div className="sm:inline-flex sm:shrink-0 sm:items-center sm:gap-2">
                 <svg
@@ -185,7 +185,7 @@ const Card = ({
             ) : (
               ""
             )}
-          </div>
+          </div> */}
         </div>
       </Link>
     </>

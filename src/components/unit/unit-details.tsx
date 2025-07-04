@@ -8,132 +8,77 @@ import { Rating, UnitType } from "@/types/unit"
 
 import PeopleRate from "./people-rate"
 
-const details = [
-  {
-    id: "1",
-    count: "2",
-    label: "أسرة فردية",
-    icon: <BedSingle className="text-primaryColor" strokeWidth={1.25} />,
-  },
-  {
-    id: "2",
-    count: "1",
-    label: "سرير كبير",
-    icon: <BedDouble className="text-primaryColor" strokeWidth={1.25} />,
-  },
-  {
-    id: "3",
-    count: "1",
-    label: "سرير ملكة",
-    icon: <BedDouble className="text-primaryColor" strokeWidth={1.25} />,
-  },
-  {
-    id: "4",
-    count: "4",
-    label: "حمامات",
-    icon: <Bath className="text-primaryColor" strokeWidth={1.25} />,
-  },
-  {
-    id: "5",
-    count: "0",
-    label: "حمام سباحة عام",
-    icon: <Bath className="text-primaryColor" strokeWidth={1.25} />,
-  },
-  {
-    id: "6",
-    count: "0",
-    label: "جلسة خارجية",
-    icon: <Trees className="text-primaryColor" strokeWidth={1.25} />,
-  },
-]
-
-const specialDetails = [
-  {
-    id: "1",
-    label: "حديقة",
-    icon: <Trees className="text-primaryColor3" strokeWidth={1.25} />,
-  },
-  {
-    id: "2",
-    label: "استقبال",
-    icon: <BedDouble className="text-primaryColor3" strokeWidth={1.25} />,
-  },
-  {
-    id: "3",
-    count: "1",
-    label: "تصميم عصري",
-    icon: <BedDouble className="text-primaryColor3" strokeWidth={1.25} />,
-  },
-  {
-    id: "4",
-    count: "4",
-    label: "مكواة و طاولة الكي",
-    icon: <Bath className="text-primaryColor3" strokeWidth={1.25} />,
-  },
-  {
-    id: "5",
-    count: "0",
-    label: "موقد طهي",
-    icon: <Bath className="text-primaryColor3" strokeWidth={1.25} />,
-  },
-]
-
-// const usersRates = [
+// const details = [
 //   {
 //     id: "1",
-//     date: new Date("4/29/2024"),
-//     username: "Alasmar",
-//     rate: 5,
-//     comment:
-//       "Lorem, ipsum dolor edita, itaqi emos qui. Voluptatem veniam perspiciatis qui perferendis!",
-//     img: "",
+//     count: "2",
+//     label: "أسرة فردية",
+//     icon: <BedSingle className="text-primaryColor" strokeWidth={1.25} />,
 //   },
 //   {
 //     id: "2",
-//     date: new Date("4/30/2024"),
-//     username: "fisal",
-//     rate: 4.5,
-//     comment:
-//       "Lorem, ipsum dolor edita, itaqi emos qui. Voluptatem veniam perspiciatis qui perferendis!",
-//     img: "",
+//     count: "1",
+//     label: "سرير كبير",
+//     icon: <BedDouble className="text-primaryColor" strokeWidth={1.25} />,
 //   },
 //   {
 //     id: "3",
-//     date: new Date("4/29/2024"),
-//     username: "Ahmed",
-//     rate: 5,
-//     comment:
-//       "Lorem, ipsum dolor edita, itaqi emos qui. Voluptatem veniam perspiciatis qui perferendis!",
-//     img: "",
+//     count: "1",
+//     label: "سرير ملكة",
+//     icon: <BedDouble className="text-primaryColor" strokeWidth={1.25} />,
 //   },
 //   {
 //     id: "4",
-//     date: new Date("4/29/2024"),
-//     username: "Ibrahim",
-//     rate: 3,
-//     comment:
-//       "Lorem, ipsum dolor edita, itaqi emos qui. Voluptatem veniam perspiciatis qui perferendis!",
-//     img: "",
+//     count: "4",
+//     label: "حمامات",
+//     icon: <Bath className="text-primaryColor" strokeWidth={1.25} />,
 //   },
 //   {
 //     id: "5",
-//     date: new Date("4/29/2024"),
-//     username: "Fatima",
-//     rate: 4,
-//     comment:
-//       "Lorem, ipsum dolor edita, itaqi emos qui. Voluptatem veniam perspiciatis qui perferendis!",
-//     img: "",
+//     count: "0",
+//     label: "حمام سباحة عام",
+//     icon: <Bath className="text-primaryColor" strokeWidth={1.25} />,
 //   },
 //   {
 //     id: "6",
-//     date: new Date("4/29/2024"),
-//     username: "Marwa",
-//     rate: 5,
-//     comment:
-//       "Lorem, ipsum dolor edita, itaqi emos qui. Voluptatem veniam perspiciatis qui perferendis!",
-//     img: "",
+//     count: "0",
+//     label: "جلسة خارجية",
+//     icon: <Trees className="text-primaryColor" strokeWidth={1.25} />,
 //   },
 // ]
+
+// const specialDetails = [
+//   {
+//     id: "1",
+//     label: "حديقة",
+//     icon: <Trees className="text-primaryColor3" strokeWidth={1.25} />,
+//   },
+//   {
+//     id: "2",
+//     label: "استقبال",
+//     icon: <BedDouble className="text-primaryColor3" strokeWidth={1.25} />,
+//   },
+//   {
+//     id: "3",
+//     count: "1",
+//     label: "تصميم عصري",
+//     icon: <BedDouble className="text-primaryColor3" strokeWidth={1.25} />,
+//   },
+//   {
+//     id: "4",
+//     count: "4",
+//     label: "مكواة و طاولة الكي",
+//     icon: <Bath className="text-primaryColor3" strokeWidth={1.25} />,
+//   },
+//   {
+//     id: "5",
+//     count: "0",
+//     label: "موقد طهي",
+//     icon: <Bath className="text-primaryColor3" strokeWidth={1.25} />,
+//   },
+// ]
+
+
 
 type Props = {
   unit: UnitType
@@ -155,7 +100,7 @@ const UnitDetails = (props: Props) => {
           <hr className="w-full" />
 
           {/* create unit details icons */}
-          <div className="my-6 flex flex-wrap gap-3">
+          {/* <div className="my-6 flex flex-wrap gap-3">
             {details
               ? details.map((item) => (
                   <div
@@ -166,14 +111,14 @@ const UnitDetails = (props: Props) => {
                   </div>
                 ))
               : null}
-          </div>
+          </div> */}
 
           <div className="my-6 text-lg/6 text-foreground-600 max-lg:text-center">
             {props.unit.title}
           </div>
           <hr className="my-5 w-full" />
 
-          <div>
+          {/* <div>
             <h3 className="my-5 text-lg font-medium lg:text-2xl">المميزات الخاصة</h3>
             <div className="icons mt-5 flex flex-wrap items-start gap-3">
               {specialDetails &&
@@ -185,7 +130,7 @@ const UnitDetails = (props: Props) => {
                   </div>
                 ))}
             </div>
-          </div>
+          </div> */}
 
           <hr className="my-5 w-full" />
 
